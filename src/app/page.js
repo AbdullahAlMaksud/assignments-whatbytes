@@ -156,7 +156,7 @@ export default function Home() {
                   <span className="text-xl">🏆</span>
                 </div>
                 <div className="flex justify-center xl:items-start items-center flex-col">
-                  <p className="text-xl font-bold">{scores.rank || 0}</p>
+                  <p className="text-xl font-bold">{scores.rank || 109}</p>
                   <span className="uppercase text-xl lg:text-xs 2xl:text-xl  text-nowrap">
                     Your Rank
                   </span>
@@ -169,7 +169,7 @@ export default function Home() {
                   <span className="text-xl">📝</span>
                 </div>
                 <div className="flex justify-center items-center xl:items-start flex-col">
-                  <p className="text-xl font-bold">{scores.percentile || 0}%</p>
+                  <p className="text-xl font-bold">{scores.percentile || 5}%</p>
                   <span className="uppercase text-xl lg:text-xs 2xl:text-xl  text-nowrap">
                     Percentile
                   </span>
@@ -181,7 +181,7 @@ export default function Home() {
                   <span className="text-xl">✅</span>
                 </div>
                 <div className="flex justify-center items-center  xl:items-start flex-col">
-                  <p className="text-xl font-bold">{scores.score || 0}/15</p>
+                  <p className="text-xl font-bold">{scores.score || 5}/15</p>
                   <span className="uppercase text-xl lg:text-xs 2xl:text-xl  text-nowrap">
                     Correct Answer
                   </span>
