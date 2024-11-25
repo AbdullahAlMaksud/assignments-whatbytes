@@ -12,8 +12,8 @@ const RightSidebar = () => {
           href={"/dashboard"}
           className={
             path === "/dashboard"
-              ? "flex font-bold my-1 bg-blue-800/5 py-3 mr-2 text-blue-800 px-5 rounded-r-full gap-4"
-              : "flex font-bold my-1 hover:bg-blue-800/5 py-3 mr-2 hover:text-blue-800 px-5 rounded-r-full gap-4"
+              ? "flex font-bold my-1 bg-blue-800/5 w-full py-3 mr-2 text-blue-800 px-5 rounded-r-full gap-4"
+              : "flex font-bold w-full my-1 hover:bg-blue-800/5 py-3 mr-2 hover:text-blue-800 px-5 rounded-r-full gap-4"
           }
         >
           <ChartNoAxesColumn /> Dashboard
@@ -30,11 +30,11 @@ const RightSidebar = () => {
           Skill Test
         </Link>
         <Link
-          href={"/intership"}
+          href={"/internship"}
           className={
-            path === "/intership"
-              ? "flex font-bold my-1 bg-blue-800/5 py-3 mr-2 text-blue-800 px-5 rounded-r-full gap-4"
-              : "flex font-bold my-1 hover:bg-blue-800/5 py-3 mr-2 hover:text-blue-800 px-5 rounded-r-full gap-4"
+            path === "/internship"
+              ? "flex font-bold my-1 bg-blue-800/5 w-full py-3 mr-2 text-blue-800 px-5 rounded-r-full gap-4"
+              : "flex font-bold w-full my-1 hover:bg-blue-800/5 py-3 mr-2 hover:text-blue-800 px-5 rounded-r-full gap-4"
           }
         >
           <File />
