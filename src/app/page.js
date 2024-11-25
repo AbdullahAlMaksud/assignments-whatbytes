@@ -1,101 +1,194 @@
+"use client";
+import CustomBarChart from "@/components/CustomBarChart";
+import CustomLineChar from "@/components/CustomLineChar";
+import CustomPieChart from "@/components/CustomPieChart";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { Input } from "@/components/ui/input";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [scores, setScores] = useState({ rank: "", percentile: "", score: "" });
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const handleInputChange = (e, field) => {
+    const value = e.target.value;
+    if (!/^\d*$/.test(value)) return;
+    setScores((prevScores) => ({
+      ...prevScores,
+      [field]: value,
+    }));
+  };
+
+  const handleSave = () => {
+    const updatedScores = {
+      rank: Number(scores.rank),
+      percentile: Number(scores.percentile),
+      score: Number(scores.score),
+    };
+
+    console.log("Updated Scores:", updatedScores);
+    setScores(updatedScores);
+  };
+
+  return (
+    <section className="p-10 w-full">
+      <h2>Skill Test</h2>
+      <div className="pt-5 flex min-w-full gap-5 lg:flex-row flex-col">
+        {/* Skill Test */}
+        <div className="lg:w-3/5 w-full gap-5 flex flex-col">
+          <div className="border rounded-sm p-4 gap-2 flex justify-between items-center">
+            <div className="flex gap-2 items-center">
+              <Image src={"./html5.svg"} alt="html5" width={100} height={100} />
+              <div>
+                <h3 className="font-bold">Hyper Text Markup Language</h3>
+                <h4>
+                  Question: 08 | Duration: 15 min | Submitted on 5 June 2021
+                </h4>
+              </div>
+            </div>
+            <AlertDialog>
+              <AlertDialogTrigger className="bg-blue-950 text-white px-5 py-2 rounded-lg font-bold">
+                Update
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle className="flex gap-2 items-center justify-between">
+                    <h2>Update scores</h2>
+                    <Image
+                      src={"./html5.svg"}
+                      alt="html5"
+                      width={30}
+                      height={100}
+                    />
+                  </AlertDialogTitle>
+                  <AlertDialogDescription className="text-black space-y-10 pt-10">
+                    <div className="flex items-center justify-between">
+                      <div className="flex gap-2 items-center justify-between">
+                        <span className="bg-blue-900 text-white rounded-full font-bold px-2 py-0.5 ">
+                          1
+                        </span>
+                        <h3>
+                          Update your <span className="font-bold">Rank</span>
+                        </h3>
+                      </div>
+                      <Input
+                        className="w-1/2"
+                        placeholder="Rank"
+                        value={scores.rank}
+                        onChange={(e) => handleInputChange(e, "rank")}
+                      />
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex gap-2 items-center justify-between">
+                        <span className="bg-blue-900 text-white rounded-full font-bold px-2 py-0.5 ">
+                          2
+                        </span>
+                        <h3>
+                          Update your{" "}
+                          <span className="font-bold">Percentile</span>
+                        </h3>
+                      </div>
+                      <Input
+                        className="w-1/2"
+                        placeholder="Percentile"
+                        value={scores.percentile}
+                        onChange={(e) => handleInputChange(e, "percentile")}
+                      />
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex gap-2 items-center justify-between max-w-52">
+                        <span className="bg-blue-900 text-white rounded-full font-bold px-2 py-0.5 ">
+                          3
+                        </span>
+                        <h3>
+                          Update your{" "}
+                          <span className="font-bold">
+                            Current Score (out of 15)
+                          </span>
+                        </h3>
+                      </div>
+                      <Input
+                        className="w-1/2"
+                        placeholder="Score"
+                        value={scores.score}
+                        onChange={(e) => handleInputChange(e, "score")}
+                      />
+                    </div>
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel className="border-blue-800">
+                    Cancel
+                  </AlertDialogCancel>
+                  <AlertDialogAction
+                    className="bg-blue-900"
+                    onClick={handleSave}
+                  >
+                    Save <ArrowRight />
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          </div>
+          {/* Quick Stat */}
+          <div className="border rounded-sm p-4">
+            <div className="font-bold">Quick Statistics</div>
+            <div className="flex justify-between my-5 mx-5">
+              <div className="flex justify-center items-center gap-2">
+                <div className="bg-gray-100 rounded-full p-3">
+                  <span className="text-xl">🏆</span>
+                </div>
+                <div>
+                  <p className="text-xl font-bold">{scores.rank || 0}</p>
+                  <span className="uppercase">Your Rank</span>
+                </div>
+              </div>
+              <hr className="h-20 w-0.5 bg-secondary border-black" />
+              <div className="flex justify-center items-center gap-2">
+                <div className="bg-gray-100 rounded-full p-3">
+                  <span className="text-xl">📝</span>
+                </div>
+                <div>
+                  <p className="text-xl font-bold">{scores.percentile || 0}%</p>
+                  <span className="uppercase">Percentile</span>
+                </div>
+              </div>
+              <hr className="h-20 w-0.5 bg-secondary border-black" />
+              <div className="flex justify-center items-center gap-2">
+                <div className="bg-gray-100 rounded-full p-3">
+                  <span className="text-xl">✅</span>
+                </div>
+                <div>
+                  <p className="text-xl font-bold">{scores.score || 0}/15</p>
+                  <span className="uppercase">Correct Answer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="border rounded-sm p-4">
+            <CustomLineChar />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="lg:w-2/5 space-y-5">
+          <div className="border rounded-sm p-4">
+            <CustomBarChart totalscore={scores.score} />
+          </div>
+          <div className="border rounded-sm p-4">
+            <CustomPieChart totalscore={scores.score} />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
