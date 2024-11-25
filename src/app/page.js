@@ -1,7 +1,7 @@
 "use client";
-import CustomBarChart from "@/components/CustomBarChart";
-import CustomLineChar from "@/components/CustomLineChar";
-import CustomPieChart from "@/components/CustomPieChart";
+import CustomBarChart from "@/components/customchart/CustomBarChart";
+import CustomLineChar from "@/components/customchart/CustomLineChart";
+import CustomPieChart from "@/components/customchart/CustomPieChart";
 import {
   AlertDialog,
   AlertDialogAction,
