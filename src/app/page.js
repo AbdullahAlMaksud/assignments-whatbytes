@@ -91,7 +91,7 @@ export default function Home() {
                       <Input
                         className="w-1/2"
                         placeholder="Rank"
-                        value={scores.rank}
+                        defaultValue={scores.rank || 109}
                         onChange={(e) => handleInputChange(e, "rank")}
                       />
                     </div>
@@ -108,7 +108,7 @@ export default function Home() {
                       <Input
                         className="w-1/2"
                         placeholder="Percentile"
-                        value={scores.percentile}
+                        defaultValue={scores.percentile || 30}
                         onChange={(e) => handleInputChange(e, "percentile")}
                       />
                     </div>
@@ -127,7 +127,7 @@ export default function Home() {
                       <Input
                         className="w-1/2"
                         placeholder="Score"
-                        value={scores.score}
+                        defaultValue={scores.score || 4}
                         onChange={(e) => handleInputChange(e, "score")}
                       />
                     </div>
@@ -169,7 +169,9 @@ export default function Home() {
                   <span className="text-xl">📝</span>
                 </div>
                 <div className="flex justify-center items-center xl:items-start flex-col">
-                  <p className="text-xl font-bold">{scores.percentile || 5}%</p>
+                  <p className="text-xl font-bold">
+                    {scores.percentile || 30}%
+                  </p>
                   <span className="uppercase text-xl lg:text-xs 2xl:text-xl  text-nowrap">
                     Percentile
                   </span>
@@ -181,7 +183,7 @@ export default function Home() {
                   <span className="text-xl">✅</span>
                 </div>
                 <div className="flex justify-center items-center  xl:items-start flex-col">
-                  <p className="text-xl font-bold">{scores.score || 5}/15</p>
+                  <p className="text-xl font-bold">{scores.score || 4}/15</p>
                   <span className="uppercase text-xl lg:text-xs 2xl:text-xl  text-nowrap">
                     Correct Answer
                   </span>
@@ -198,7 +200,7 @@ export default function Home() {
             <CustomBarChart totalscore={scores.score} />
           </div>
           <div className="border rounded-sm p-4">
-            <CustomPieChart totalscore={scores.score} />
+            <CustomPieChart totalscore={scores.score || 4} />
           </div>
         </div>
       </div>
