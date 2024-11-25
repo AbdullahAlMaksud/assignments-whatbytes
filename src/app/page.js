@@ -42,14 +42,20 @@ export default function Home() {
   };
 
   return (
-    <section className="p-10 w-full">
+    <section className="p-5 lg:p-10 w-full">
       <h2>Skill Test</h2>
       <div className="pt-5 flex min-w-full gap-5 lg:flex-row flex-col">
         {/* Skill Test */}
         <div className="lg:w-3/5 w-full gap-5 flex flex-col">
-          <div className="border rounded-sm p-4 gap-2 flex justify-between items-center">
-            <div className="flex gap-2 items-center">
-              <Image src={"./html5.svg"} alt="html5" width={100} height={100} />
+          <div className="border rounded-sm p-4 gap-2 flex justify-between items-center flex-col lg:flex-row">
+            <div className="flex gap-2 flex-col lg:flex-row text-center lg:text-left items-center">
+              <Image
+                src={"./html5.svg"}
+                alt="html5"
+                width={100}
+                className=""
+                height={100}
+              />
               <div>
                 <h3 className="font-bold">Hyper Text Markup Language</h3>
                 <h4>
@@ -144,34 +150,41 @@ export default function Home() {
           {/* Quick Stat */}
           <div className="border rounded-sm p-4">
             <div className="font-bold">Quick Statistics</div>
-            <div className="flex justify-between my-5 mx-5">
-              <div className="flex justify-center items-center gap-2">
+            <div className="flex justify-between flex-col lg:flex-row my-5 mx-5">
+              <div className="flex justify-center xl:flex-row flex-col items-center gap-2">
                 <div className="bg-gray-100 rounded-full p-3">
                   <span className="text-xl">🏆</span>
                 </div>
-                <div>
+                <div className="flex justify-center xl:items-start items-center flex-col">
                   <p className="text-xl font-bold">{scores.rank || 0}</p>
-                  <span className="uppercase">Your Rank</span>
+                  <span className="uppercase text-xl lg:text-xs 2xl:text-xl  text-nowrap">
+                    Your Rank
+                  </span>
                 </div>
               </div>
-              <hr className="h-20 w-0.5 bg-secondary border-black" />
-              <div className="flex justify-center items-center gap-2">
+
+              <hr className="lg:h-20 h-0 my-5 lg:w-0.5 bg-gray-200 border-gray-200" />
+              <div className="flex justify-center flex-col xl:flex-row items-center gap-2">
                 <div className="bg-gray-100 rounded-full p-3">
                   <span className="text-xl">📝</span>
                 </div>
-                <div>
+                <div className="flex justify-center items-center xl:items-start flex-col">
                   <p className="text-xl font-bold">{scores.percentile || 0}%</p>
-                  <span className="uppercase">Percentile</span>
+                  <span className="uppercase text-xl lg:text-xs 2xl:text-xl  text-nowrap">
+                    Percentile
+                  </span>
                 </div>
               </div>
-              <hr className="h-20 w-0.5 bg-secondary border-black" />
-              <div className="flex justify-center items-center gap-2">
+              <hr className="lg:h-20 h-0 my-5 lg:w-0.5 bg-gray-200 border-gray-200" />
+              <div className="flex justify-center flex-col xl:flex-row items-center gap-2">
                 <div className="bg-gray-100 rounded-full p-3">
                   <span className="text-xl">✅</span>
                 </div>
-                <div>
+                <div className="flex justify-center items-center  xl:items-start flex-col">
                   <p className="text-xl font-bold">{scores.score || 0}/15</p>
-                  <span className="uppercase">Correct Answer</span>
+                  <span className="uppercase text-xl lg:text-xs 2xl:text-xl  text-nowrap">
+                    Correct Answer
+                  </span>
                 </div>
               </div>
             </div>

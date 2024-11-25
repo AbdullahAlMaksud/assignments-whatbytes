@@ -18,7 +18,7 @@ const Navbar = () => {
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
-          <span className="font-bold">Rahil Siddique</span>
+          <span className="font-bold hidden md:flex">Rahil Siddique</span>
         </Button>
       </div>
     </div>

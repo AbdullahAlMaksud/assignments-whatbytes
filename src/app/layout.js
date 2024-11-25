@@ -25,9 +25,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar className="bg-green-100" />
+        <Navbar className="bg-green-500" />
         <div className="flex flex-col md:flex-row">
-          <div className="w-full lg:w-60">
+          <div className="w-full md:w-80 border-b lg:border-b-0 md:border-r lg:border-gray-200">
             <RightSidebar />
           </div>
           <div className="w-full">{children}</div>

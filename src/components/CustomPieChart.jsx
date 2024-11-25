@@ -1,10 +1,10 @@
-import { Cell, Pie, PieChart, Tooltip } from "recharts";
+import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 
-const CustomPieChart = ({ totalscore: score = 5 }) => {
-  const data = [{ name: "Score", value: score }];
-
-  // Blue for score, Light blue for remaining
-  const COLORS = ["#2c78ff", "#d4e9ff"];
+const CustomPieChart = ({ totalscore: score }) => {
+  const data = [
+    { name: "Score", value: (score = 5) },
+    { name: "Remaining", value: 15 - score },
+  ];
 
   return (
     <div className="pt-5">
@@ -21,23 +21,29 @@ const CustomPieChart = ({ totalscore: score = 5 }) => {
         </div>
       </div>
 
-      {/* Pie Chart with Icon Inside */}
-      <div className="flex justify-center items-center mt-5">
-        <PieChart width={200} height={200}>
-          <Pie
-            data={data}
-            innerRadius={70} // Creates a thick border effect
-            outerRadius={100}
-            paddingAngle={5}
-            dataKey="value"
-          >
-            {/* Assign colors to slices (Score is blue, Remaining is light blue) */}
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index] || 0} />
-            ))}
-          </Pie>
-          <Tooltip />
-        </PieChart>
+      {/* Pie Chart */}
+      <div
+        className="flex justify-center items-center mt-5"
+        style={{ width: "100%", height: 400 }}
+      >
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              dataKey="value"
+              data={data}
+              cx="50%"
+              cy="50%"
+              innerRadius={60}
+              outerRadius={100}
+              paddingAngle={5}
+              isAnimationActive={true}
+            >
+              <Cell fill="#2c78ff" />
+              <Cell fill="#d4e9ff" />
+            </Pie>
+            <Tooltip />
+          </PieChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );

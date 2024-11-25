@@ -6,8 +6,8 @@ import { usePathname } from "next/navigation";
 const RightSidebar = () => {
   const path = usePathname();
   return (
-    <div className="min-w-full">
-      <div className="md:border-r md:min-h-screen md:pt-10 w-full border-b">
+    <div className="min-w-full flex">
+      <div className="pr-3 flex flex-col md:pt-10 w-full">
         <Link
           href={"/dashboard"}
           className={
