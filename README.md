@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Skill Test Dashboard
 
-## Getting Started
+This project is a **Skill Test Dashboard**, developed as part of a job assignment for **WhatBytes**. The dashboard displays an analysis of user performance in a skill test using a pie chart to visualize the user's score.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- **Responsive Design**: Ensures an optimal viewing experience across all devices.
+- **Dynamic Pie Chart**: Visual representation of the user's test score with color-coded sections.
+- **User Feedback**: Provides actionable insights for improvement based on the score.
+- **Tooltip Support**: Hovering over the pie chart reveals detailed score information.
+
+---
+
+## 🛠️ Technologies Used
+
+- **React**: For building the user interface.
+- **Recharts**: For rendering the pie chart.
+- **Tailwind CSS**: For styling and responsive design.
+- **ShadCN**: For prebuilt component.
+
+---
+
+## 📂 Project Structure
+
+public/<br/>
+├── bullseye.svg<br/>
+├── cup.svg<br/>
+├── file.svg<br/>
+├── globe.svg<br/>
+├── html5.svg<br/>
+├── next.svg<br/>
+├── note.svg<br/>
+├── tick.svg<br/>
+├── vercel.svg<br/>
+├── window.svg<br/>
+<br/>
+src/<br/>
+├── app/<br/>
+│   ├── dashboard/<br/>
+│   ├── fonts/<br/>
+│   ├── internship/<br/>
+│   ├── globals.css<br/>
+│   ├── icon.svg<br/>
+│   ├── layout.js<br/>
+│   ├── page.js<br/>
+├── components/<br/>
+│   ├── dashboard/<br/>
+│   │   ├── Dashboard.jsx<br/>
+│   │   ├── RighSidebar.jsx<br/>
+│   ├── navbar/<br/>
+│   │   ├── Navbar.jsx<br/>
+│   ├── ui/<br/>
+│       ├── CustomBarChart.jsx<br/>
+│       ├── CustomLineChar.jsx<br/>
+│       ├── CustomPieChart.jsx<br/>
+│       ├── app-sidebar.jsx<br/>
+│       ├── calendars.jsx<br/>
+│       ├── date-picker.jsx<br/>
+│       ├── nav-favorites.jsx<br/>
+│       ├── nav-main.jsx<br/>
+│       ├── nav-secondary.jsx<br/>
+│       ├── nav-user.jsx<br/>
+│       ├── nav-workspaces.jsx<br/>
+│       ├── sidebar-left.jsx<br/>
+│       ├── sidebar-right.jsx<br/>
+│       ├── team-switcher.jsx<br/>
+├── hooks/<br/>
+├── lib/<br/>
+<br/>
+.eslintrc.json<br/>
+.gitignore<br/>
+README.md<br/>
+components.json<br/>
+jsconfig.json<br/>
+next.config.mjs<br/>
+package-lock.json<br/>
+package.json<br/>
+postcss.config.mjs<br/>
+tailwind.config.js<br/>
+
+
+---
+
+## 📖 Usage
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/skill-test-dashboard.git
+```
+```
+cd skill-test-dashboard
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
+```
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3. Start the Application
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+npm start
+```
+This will start the application and open it in your default web browser at http://localhost:3000.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## 🎯 Assignment Video Link
+Watch the assignment video for more details on the requirements: `Skill Test Dashboard Assignment Video`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Acknowledgments
+Special thanks to WhatBytes for providing this assignment as part of the job selection process.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 💻 Developer Notes
+If you'd like to customize the chart's total score, you can update the totalScore prop in the CustomPieChart component.
+All styling can be adjusted in the index.css file, leveraging the power of Tailwind CSS.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 License
+This project is for demonstration purposes only and is not intended for production use.
