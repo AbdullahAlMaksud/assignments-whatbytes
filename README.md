@@ -22,67 +22,6 @@ This project is a **Skill Test Dashboard**, developed as part of a job assignmen
 
 ---
 
-## 📂 Project Structure
-
-public/<br/>
-├── bullseye.svg<br/>
-├── cup.svg<br/>
-├── file.svg<br/>
-├── globe.svg<br/>
-├── html5.svg<br/>
-├── next.svg<br/>
-├── note.svg<br/>
-├── tick.svg<br/>
-├── vercel.svg<br/>
-├── window.svg<br/>
-<br/>
-src/<br/>
-├── app/<br/>
-│   ├── dashboard/<br/>
-│   ├── fonts/<br/>
-│   ├── internship/<br/>
-│   ├── globals.css<br/>
-│   ├── icon.svg<br/>
-│   ├── layout.js<br/>
-│   ├── page.js<br/>
-├── components/<br/>
-│   ├── dashboard/<br/>
-│   │   ├── Dashboard.jsx<br/>
-│   │   ├── RighSidebar.jsx<br/>
-│   ├── navbar/<br/>
-│   │   ├── Navbar.jsx<br/>
-│   ├── ui/<br/>
-│       ├── CustomBarChart.jsx<br/>
-│       ├── CustomLineChar.jsx<br/>
-│       ├── CustomPieChart.jsx<br/>
-│       ├── app-sidebar.jsx<br/>
-│       ├── calendars.jsx<br/>
-│       ├── date-picker.jsx<br/>
-│       ├── nav-favorites.jsx<br/>
-│       ├── nav-main.jsx<br/>
-│       ├── nav-secondary.jsx<br/>
-│       ├── nav-user.jsx<br/>
-│       ├── nav-workspaces.jsx<br/>
-│       ├── sidebar-left.jsx<br/>
-│       ├── sidebar-right.jsx<br/>
-│       ├── team-switcher.jsx<br/>
-├── hooks/<br/>
-├── lib/<br/>
-<br/>
-.eslintrc.json<br/>
-.gitignore<br/>
-README.md<br/>
-components.json<br/>
-jsconfig.json<br/>
-next.config.mjs<br/>
-package-lock.json<br/>
-package.json<br/>
-postcss.config.mjs<br/>
-tailwind.config.js<br/>
-
-
----
-
 ## 📖 Usage
 
 ### 1. Clone the Repository
@@ -106,9 +45,6 @@ npm start
 ```
 This will start the application and open it in your default web browser at http://localhost:3000.
 
-
-## 🎯 Assignment Video Link
-Watch the assignment video for more details on the requirements: `Skill Test Dashboard Assignment Video`
 
 ## 🤝 Acknowledgments
 Special thanks to WhatBytes for providing this assignment as part of the job selection process.
